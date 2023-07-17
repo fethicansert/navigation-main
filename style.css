@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;500;600;700&display=swap');
+
+:root{
+    --background:rgba(0,214,170,.85)
+}
+
+
+*,*::before,*::after{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0px;
+    font-family: 'Work Sans', sans-serif;
+    place-items: center;
+    
+}
+
+.content{
+    height: 200vh;
+}
+
+
+
+header{
+    background-color: var(--background);
+    text-align: center;
+    position: fixed;/*fixed ayni zamanda relative lik de katiyor*/
+    width: 100%;
+    z-index: 999;
+}
+
+.logo{
+    margin: 5px;
+}
+
+nav{
+    position: absolute;
+    text-align: left;
+    background-color: gray;
+    top: 100%;/*Topdan X % kadar uzaktayim,bu yuzdelik relati olan parentime baglidir*/
+    left:0%;
+    background:red;
+    width: 100%;
+    display: none;
+}
+/* Nav'in ul'sini ayarliyoruz */
+nav ul{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+}
+
+nav a:hover{
+    color: black;
+}
+
+nav li{
+    margin-bottom: 1em;
+    margin-left: 1em;
+    text-transform: uppercase;
+}
+
+
+.nav-toggle:checked ~ nav{
+    display: block;
+}
+
