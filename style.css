@@ -71,3 +71,81 @@ nav li{
     display: block;
 }
 
+.nav-toggle{
+    display: none;
+}
+/*Burdaki 100% yapip flex deyip ortalama yapmak cok jix*/
+.nav-toggle-label{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-left: 1em;
+    height: 100%;  /*Boyunu 100% di headerin fixed(relative) olmasi onemli display:flex ardindan align items center ile centerlendi*/
+    display: flex; /*Position absulte oldugu icin headerin center ozelligi calismayacaktir*/
+    align-items: center;
+    
+}
+
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after
+ {
+    display: block;
+    background: white;
+    height: 2px;
+    width: 2em;
+    border-radius: 2px;
+    position: relative;
+    
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span:after{
+    content: ' ';
+    display: absolute;
+}
+
+.nav-toggle-label span::before{
+  
+   bottom: 10px;
+}
+
+.nav-toggle-label span::after{
+    top: 9px;
+}
+
+.nav-toggle-label-right{
+    position: absolute;
+    right: 0;
+    top:0;
+    height:100%;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.nav-toggle-label-right span,
+.nav-toggle-label-right span::before,
+.nav-toggle-label-right span::after
+{
+    background-color: white;
+    width: 2em;
+    height: 2px;
+    display: block;
+    border-radius: 2px;
+    position: relative;
+}
+
+.nav-toggle-label-right span::before,
+.nav-toggle-label-right span::after{
+    content: '';
+    position: absolute;
+}
+.nav-toggle-label-right span::before{
+    top:10px;
+}
+
+.nav-toggle-label-right span::after{
+    bottom:9px;
+}
