@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
 
 :root{
-    --background:rgba(0,214,170,.85)
+    --background:rgba(30, 120, 160, 1)
 }
 
 
@@ -11,7 +13,7 @@
 
 body{
     margin: 0px;
-    font-family: 'Work Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
     place-items: center;
     
 }
@@ -32,6 +34,7 @@ header{
 
 .logo{
     margin: 5px;
+    color: white;
 }
 
 nav{
@@ -40,9 +43,11 @@ nav{
     background-color: gray;
     top: 100%;/*Topdan X % kadar uzaktayim,bu yuzdelik relati olan parentime baglidir*/
     left:0%;
-    background:red;
+    background:var(--background);
     width: 100%;
-    display: none;
+    transform: scale(1,0);
+    transform-origin: top;
+    transition: transform 0.5s;
 }
 /* Nav'in ul'sini ayarliyoruz */
 nav ul{
@@ -54,10 +59,13 @@ nav ul{
 nav a{
     text-decoration: none;
     color: white;
+    opacity: 0;
+    transition: opacity 250ms ease-in-out;
 }
 
 nav a:hover{
     color: black;
+    font-weight: bold;
 }
 
 nav li{
@@ -66,9 +74,25 @@ nav li{
     text-transform: uppercase;
 }
 
-
 .nav-toggle:checked ~ nav{
-    display: block;
+     transform: scale(1,1);
+}
+
+.nav-toggle:checked ~ nav .home-link{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 200ms;
+}
+.nav-toggle:checked ~ nav .about-link{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 300ms;
+}
+.nav-toggle:checked ~ nav .blog-link{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 400ms;
+}
+.nav-toggle:checked ~ nav .contact-link{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out 500ms;
 }
 
 .nav-toggle{
@@ -85,7 +109,6 @@ nav li{
     align-items: center;
     
 }
-
 
 .nav-toggle-label span,
 .nav-toggle-label span::before,
@@ -115,37 +138,19 @@ nav li{
     top: 9px;
 }
 
-.nav-toggle-label-right{
-    position: absolute;
-    right: 0;
-    top:0;
-    height:100%;
-    display: flex;
-    align-items: center;
-    margin-right: 5px;
-}
+@media screen and (min-width:800px){
+   /* .nav-toggle-label{
+    display: none;
+   }
 
-.nav-toggle-label-right span,
-.nav-toggle-label-right span::before,
-.nav-toggle-label-right span::after
-{
-    background-color: white;
-    width: 2em;
-    height: 2px;
-    display: block;
-    border-radius: 2px;
-    position: relative;
-}
+   header{
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px,1fr) 1fr;
+   }
 
-.nav-toggle-label-right span::before,
-.nav-toggle-label-right span::after{
-    content: '';
-    position: absolute;
-}
-.nav-toggle-label-right span::before{
-    top:10px;
-}
 
-.nav-toggle-label-right span::after{
-    bottom:9px;
+
+   nav{
+    display: none;
+   } */
 }
